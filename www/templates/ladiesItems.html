@@ -1,0 +1,16 @@
+<ion-view title="{{department}}" id="page2">
+  <ion-content padding="true" class="has-header">
+    <a class="list card" style="display:block;text-decoration:none;" ui-sref="labies.itemDetails({id:'{{item.id}}',showAdd:1})" id="ladiesItems-card21" ng-repeat="item in items">
+      <div style="margin: 0px; background-color: rgb(232, 235, 239); text-align: center;">
+        <img src="{{item.image}}" style="width:100%">
+      </div>
+      <div class="item item-body" id="ladiesItems-list-item-container2">
+        <div id="ladiesItems-markdown2" class="show-list-numbers-and-dots">
+          <p style="margin-top:0px;color:#000000;">
+            {{item.name}}{{item.id}}
+          </p>
+        </div>
+      </div>
+    </a>
+  </ion-content>
+</ion-view>

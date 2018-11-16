@@ -1,0 +1,29 @@
+<ion-view title="{{item.title}}" id="page5">
+  <ion-content padding="true" class="has-header">
+    <div style="margin: 0px; background-color: rgb(232, 235, 239); text-align: center;">
+      <img src="{{item.image}}" style="width: 100%">
+    </div>
+    <div id="itemDetails-markdown5" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">
+        {{item.desc}}
+      </p>
+    </div>
+    <div id="itemDetails-markdown6" style="text-align:right;" class="show-list-numbers-and-dots">
+      <p style="color:#AF9B3A;">Unit Price:${{item.price}}</p>
+    </div>
+    <form id="itemDetails-form1" class="list">
+      <label class="item item-input" id="itemDetails-input1">
+        <span class="input-label">Quantity</span>
+        <input type="number" placeholder="" ng-model='data.quantity'>
+      </label>
+    </form>
+    <div id="itemDetails-markdown7" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">Subtotal:${{item.price * data.quantity}}</p>
+    </div>
+    <button id="itemDetails-button10" class="button button-positive button-block icon-right ion-android-cart">Add to Cart</button>
+    <div id="itemDetails-button-bar2" class="button-bar">
+      <button id="itemDetails-button15" class="button button-royal button-block">Update</button>
+      <button id="itemDetails-button16" class="button button-assertive button-block">Delete</button>
+    </div>
+  </ion-content>
+</ion-view>
