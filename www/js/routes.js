@@ -23,7 +23,7 @@ angular.module('app.routes', [])
     url: '/page3',
     views: {
       'tab2': {
-        templateUrl: 'templates/menItems.html',
+        templateUrl: 'templates/ladiesItems.html',
         controller: 'menItemsCtrl'
       }
     }
@@ -51,6 +51,14 @@ angular.module('app.routes', [])
       'tab1': {
         templateUrl: 'templates/itemDetails.html',
         controller: 'itemDetailsCtrl'
+      },
+      'tab2': {
+        templateUrl: 'templates/itemDetails.html',
+        controller: 'itemDetailsCtrl'
+      },
+      'tab3': {
+        templateUrl: 'templates/itemDetails.html',
+        controller: 'itemDetailsCtrl'
       }
     }
   })
@@ -71,23 +79,8 @@ angular.module('app.routes', [])
     controller: 'landingCtrl'
   })
 
-  .state('tabsController.itemDetails', { 
-    url: '/page5/:id/:showAdd',
-    views: {
-    'tab1': {
-          templateUrl: 'templates/itemDetails.html',
-          controller: 'itemDetailsCtrl'
-        },
-    'tab2': {
-          templateUrl: 'templates/itemDetails.html', 
-          controller: 'itemDetailsCtrl'
-    }, 
-    'tab3': {
-          templateUrl: 'templates/itemDetails.html',
-          controller: 'itemDetailsCtrl'
-        }
-    } 
-  })
+
+
 
 $urlRouterProvider.otherwise('/page1/page2')
 

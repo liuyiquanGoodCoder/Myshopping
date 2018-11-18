@@ -13,9 +13,9 @@ angular.module('app.services', [])
         {
 			id: '1',
 			department: 'Gentlemen',
-			name: 'Inakaya Denim',
-			desc: 'Inakaya Denim jeans are the latest farm-fresh Japanese-inspired fashion item',
-			image: 'https://insideretail.asia/wp- content/uploads/2016/07/Inakaya-denim.png',
+			name: 'Galvanic Down',
+			desc: 'Galvanic Down',
+			image: 'https://img.alicdn.com/imgextra/i1/1638981783/O1CN011P2eeAKm4nUNqBU_!!1638981783.jpg_430x430q90.jpg',
 			price: 120,
             quantity: 0
         },
@@ -31,9 +31,9 @@ angular.module('app.services', [])
 		{
 			id: '3',
 		    department: 'Gentlemen',
-		    name: 'GANT Polo Shirt',
-		    desc: '70’s/retro style',
-			image: 'http://m2clothing.co.uk/wp- content/uploads/2016/03/polo-m2clothing-720x540.jpg',
+		    name: 'Delta LT Zip',
+		    desc: 'Delta LT Zip',
+			image: 'https://img.alicdn.com/imgextra/i3/1638981783/TB2wtulGL5TBuNjSspmXXaDRVXa_!!1638981783.jpg_430x430q90.jpg',
 			price: 250,
 		    quantity: 0
 		},
@@ -58,7 +58,6 @@ angular.module('app.services', [])
 		})
 	}
 	this.getItem = function(id) {
-		debugger;
 		return fashion_items.filter(function(item) {
 			return item.id === id;
 		})[0] || null;
