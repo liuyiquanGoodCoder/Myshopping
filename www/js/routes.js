@@ -1,4 +1,4 @@
-angular.module('app.routes', [])
+angular.module('app.routes', ['ionicUIRouter'])
 
 .config(function($stateProvider, $urlRouterProvider) {
 
@@ -45,6 +45,19 @@ angular.module('app.routes', [])
     abstract:true
   })
 
+  /* 
+    The IonicUIRouter.js UI-Router Modification is being used for this route.
+    To navigate to this route, do NOT use a URL. Instead use one of the following:
+      1) Using the ui-sref HTML attribute:
+        ui-sref='labies.itemDetails'
+      2) Using $state.go programatically:
+        $state.go('labies.itemDetails');
+    This allows your app to figure out which Tab to open this page in on the fly.
+    If you're setting a Tabs default page or modifying the .otherwise for your app and
+    must use a URL, use one of the following:
+      /page1/tab1/page5
+      /page1/tab2/page5
+  */
   .state('labies.itemDetails', {
     url: '/page5/:id/:showAdd',
     views: {
@@ -56,10 +69,12 @@ angular.module('app.routes', [])
         templateUrl: 'templates/itemDetails.html',
         controller: 'itemDetailsCtrl'
       },
+      //
       'tab3': {
-        templateUrl: 'templates/itemDetails.html',
-        controller: 'itemDetailsCtrl'
-      }
+          templateUrl: 'templates/itemDetails.html',
+          controller: 'itemDetailsCtrl'
+        }
+
     }
   })
 
@@ -78,9 +93,6 @@ angular.module('app.routes', [])
     templateUrl: 'templates/landing.html',
     controller: 'landingCtrl'
   })
-
-
-
 
 $urlRouterProvider.otherwise('/page1/page2')
 

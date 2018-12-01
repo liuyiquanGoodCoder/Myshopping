@@ -64,15 +64,4 @@ angular.module('app.services', [])
 	}
 
 
-
-
-
-
-
-
-
-
-
-
-
 }]);
