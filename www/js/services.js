@@ -62,6 +62,16 @@ angular.module('app.services', [])
 			return item.id === id;
 		})[0] || null;
 	}
+	this.getSelected = function() {
+		return fashion_items.filter(function(item) { 
+			return item.quantity > 0;
+		}); 
+	}
+	this.clearSelected = function() {
+		fashion_items.forEach(function(item){ 
+			item.quantity = 0;
+		}); 
+	}
 
 
 }]);

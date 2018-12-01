@@ -20,10 +20,10 @@
     <div id="itemDetails-markdown7" class="show-list-numbers-and-dots">
       <p style="color:#000000;">Subtotal:${{item.price * data.quantity}}</p>
     </div>
-    <button id="itemDetails-button10" class="button button-positive button-block icon-right ion-android-cart">Add to Cart</button>
+    <button id="itemDetails-button10" class="button button-positive button-block icon-right ion-android-cart" ng-if="data.showAdd==1" ng-click="addCartItem()">Add to Cart</button>
     <div id="itemDetails-button-bar2" class="button-bar">
-      <button id="itemDetails-button15" class="button button-royal button-block">Update</button>
-      <button id="itemDetails-button16" class="button button-assertive button-block">Delete</button>
+      <button id="itemDetails-button15" class="button button-royal button-block" ng-if="data.showAdd==0" ng-click="updateCartItem()">Update</button>
+      <button id="itemDetails-button16" class="button button-assertive button-block" ng-if="data.showAdd==0" ng-click="removeCartItem()">Delete</button>
     </div>
   </ion-content>
 </ion-view>
