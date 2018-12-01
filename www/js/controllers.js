@@ -62,7 +62,6 @@ function ($scope, $stateParams,Store, $ionicHistory) {
 
 
 	var eventListener = function() {
-		debugger;
 		$scope.item.quantity = $scope.data.quantity;
 		$ionicHistory.goBack();
 	};
@@ -82,11 +81,33 @@ function ($scope, $stateParams,Store, $ionicHistory) {
 
 }])
    
-.controller('loginCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+.controller('loginCtrl', ['$scope', '$stateParams','$http','$ionicHistory','$ionicPopup', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
-
+function ($scope, $stateParams,$http,$ionicHistory,$ionicPopup) {
+	$scope.data = {};
+	debugger
+	$scope.login = function () {
+	$http.post("https://infinite-beyond-95699.herokuapp.com/User/signin", $scope.data)
+    .then(function (response) {
+        if (response.data == "Granted") {
+		var confirmPopup = $ionicPopup.confirm({
+		title: 'Welcome back!',
+		        template: 'Go back to previous page?'
+		    });
+		    confirmPopup.then(function (res) {
+		        if (res) {
+		            $ionicHistory.goBack();
+		        } else {
+		            console.log('granted');
+		        }
+		}); } else {
+		// An alert dialog
+		var alertPopup = $ionicPopup.alert({
+		    title: response.data,
+			template: 'Login failed. Please try again.' });
+		} });
+	}
 
 }])
    
